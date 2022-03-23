@@ -74,7 +74,6 @@
      btop
      ifuse
      bat
-
   ];
 
   # Options
@@ -92,6 +91,17 @@
   # Usbmuxd
   services.usbmuxd.enable = true;
 
+  # Java
+  programs.java.enable = true;
+
+  # Fish shell
+  programs.fish.enable = true;
+
+  users.users.<myusername> = {   
+    shell = pkgs.fish;
+  };
+
+  
   # SSID
   # programs.mtr.enable = true;
   programs.gnupg.agent = {
