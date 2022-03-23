@@ -1,4 +1,7 @@
-# NixRepo
-NixRepo has all nix files i use
+**NixRepo**
 
-NOTE: UserConfigs are broken at the moment
+## Here i will store all Nix files i use.
+
+**NOTE:UserConfigs are Work-In-Progress.**
+
+# In SystemConfigs i will store configuration.nix among other required nix files by my system config
