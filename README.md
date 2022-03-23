@@ -2,6 +2,12 @@
 
 ## Here i will store all Nix files i use.
 
-**NOTE:UserConfigs are Work-In-Progress.**
+Notes
+```
+1.UserConfigs are still Work-In-Progress
 
-# In SystemConfigs i will store configuration.nix among other required nix files by my system config
+2.SystemConfigs are still Work-In-Progress
+```
+
+
+This repo is early stages.
