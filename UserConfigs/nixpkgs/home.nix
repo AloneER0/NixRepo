@@ -20,7 +20,7 @@
   programs.home-manager.enable = true;
 
   # Packages
-   home.packages = with pkgs; [tmux neofetch cmatrix teams libreoffice-fresh vscode gimp element-desktop brave kate spotify obsidian obs-studio discord gzip mpv pfetch tint2 appimage-run figlet gparted];
+   home.packages = with pkgs; [tmux neofetch cmatrix teams libreoffice-fresh emacs vscode gimp element-desktop brave kate spotify obsidian obs-studio discord gzip mpv pfetch tint2 appimage-run figlet gparted];
 
 let
   doom-emacs = pkgs.callPackage (builtins.fetchTarball {
@@ -32,6 +32,7 @@ let
 in {
   home.packages = [ doom-emacs ];
 }
+
 
 
 
