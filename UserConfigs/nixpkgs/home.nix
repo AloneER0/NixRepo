@@ -22,20 +22,17 @@
   # Packages
    home.packages = with pkgs; [tmux neofetch cmatrix teams libreoffice-fresh vscode gimp element-desktop brave kate spotify obsidian obs-studio discord gzip mpv pfetch tint2 appimage-run figlet gparted];
 
-
 let
   doom-emacs = pkgs.callPackage (builtins.fetchTarball {
-    url = https://github.com/vlaci/nix-doom-emacs/archive/master.tar.gz;
+    url = https://github.com/nix-community/nix-doom-emacs/archive/master.tar.gz;
   }) {
     doomPrivateDir = ./doom.d;  # Directory containing your config.el init.el
                                 # and packages.el files
   };
 in {
   home.packages = [ doom-emacs ];
-  home.file.".emacs.d/init.el".text = ''
-      (load "default.el")
-  '';
 }
+
 
 
 }
