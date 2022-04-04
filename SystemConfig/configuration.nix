@@ -74,6 +74,14 @@
      btop
      ifuse
      bat
+     exa
+     tmux
+     kitty
+     cmake
+     gnumake
+     neovim
+     fzf
+     yt-dlp
   ];
 
   # Options
