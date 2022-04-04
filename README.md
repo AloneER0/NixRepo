@@ -10,4 +10,4 @@ Notes
 ```
 
 
-This repo is early stages.
+This repo is in early stages.
