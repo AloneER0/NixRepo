@@ -29,10 +29,10 @@
   #   useXkbConfig = true; # use xkbOptions in tty.
   # };
 
-  # Enable the X11/GNOME DE
+  # Enable the X11/Plasma DE
   services.xserver.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
 
   # Configure keymap in X11
   services.xserver.layout = "pl";
@@ -97,11 +97,11 @@
   # Fish shell
   programs.fish.enable = true;
 
-  users.users.<myusername> = {   
+  users.users.<myusername> = {
     shell = pkgs.fish;
   };
 
-  
+
   # SSID
   # programs.mtr.enable = true;
   programs.gnupg.agent = {
@@ -123,4 +123,3 @@
   system.stateVersion = "22.05"; # Did you read the comment?
 
 }
-
