@@ -1,13 +1,9 @@
-**NixRepo**
+# NixRepo
+Both SystemConfigs and UserConfigs are still W-I-P.
 
-## Here i will store all Nix files i use.
+# UserConfigs
+Contain configs for home-manager + other user-only configs.
 
-Notes
-```
-1.UserConfigs are still Work-In-Progress
+# SystemConfigs
+Contain configuration.nix + other required configs for my system to work the way i want it to work.
 
-2.SystemConfigs are still Work-In-Progress
-```
-
-
-This repo is in early stages.
