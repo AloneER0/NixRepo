@@ -2,7 +2,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -16,7 +17,7 @@
 
   # Network/Hostname
   networking.hostName = "nixbox"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Poland";
@@ -53,35 +54,35 @@
 
   # User
   users.users.alone = {
-  isNormalUser = true;
-  home = "/home/alone";
-  description = "AloneER0";
-  extraGroups = [ "wheel" "networkmanager" "docker" ];
-};
+    isNormalUser = true;
+    home = "/home/alone";
+    description = "AloneER0";
+    extraGroups = [ "wheel" "networkmanager" "docker" ];
+  };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     vim
-     wget
-     firefox
-     rustup
-     go
-     git
-     python310
-     vte
-     gcc
-     htop
-     btop
-     ifuse
-     bat
-     exa
-     tmux
-     kitty
-     cmake
-     gnumake
-     neovim
-     fzf
-     yt-dlp
+    vim
+    wget
+    firefox
+    rustup
+    go
+    git
+    python310
+    vte
+    gcc
+    htop
+    btop
+    ifuse
+    bat
+    exa
+    tmux
+    kitty
+    cmake
+    gnumake
+    neovim
+    fzf
+    yt-dlp
   ];
 
   # Options
@@ -106,28 +107,28 @@
   programs.fish.enable = true;
 
   users.users.<myusername> = {
-    shell = pkgs.fish;
-  };
+  shell = pkgs.fish;
+};
 
 
-  # SSID
-  # programs.mtr.enable = true;
-  programs.gnupg.agent = {
-     enable = true;
-     enableSSHSupport = true;
-   };
+# SSID
+# programs.mtr.enable = true;
+programs.gnupg.agent = {
+enable = true;
+enableSSHSupport = true;
+};
 
-  # List services that you want to enable:
+# List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+# Enable the OpenSSH daemon.
+services.openssh.enable = true;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+# This value determines the NixOS release from which the default
+# settings for stateful data, like file locations and database versions
+# on your system were taken. It‘s perfectly fine and recommended to leave
+# this value at the release version of the first install of this system.
+# Before changing this value read the documentation for this option
+# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+system.stateVersion = "22.05"; # Did you read the comment?
 
 }
