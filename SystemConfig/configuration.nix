@@ -33,6 +33,7 @@
   # Enable the X11/Plasma DE
   services.xserver.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.windowManager.bspwm.enable = true;
   services.xserver.displayManager.sddm.enable = true;
 
   # Configure keymap in X11
@@ -57,12 +58,12 @@
   isNormalUser = true;
   home = "/home/alone";
   description = "AloneER0";
-  extraGroups = [ "wheel" "networkmanager" "docker" ];
+  extraGroups = [ "wheel" "networkmanager" ];
 };
   
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [vim wget firefox rustup go git python310 vte gcc btop ifuse bat exa tmux kitty cmake gnumake neovim fzf yt-dlp tmux neofetch cmatrix teams onlyoffice-bin emacs vscode gimp element-desktop amberol spotify obsidian obs-studio discord gzip mpv pfetch appimage-run figlet gparted microsoft-edge blender ];
+  environment.systemPackages = with pkgs; [ aria2 nim libsForQt5.elisa libsForQt5.kate tmate wget firefox rustup go git python310 vte gcc btop ifuse bat exa kitty cmake gnumake neovim fzf yt-dlp tmux neofetch onlyoffice-bin emacs vscode gimp element-desktop spotify obsidian obs-studio discord gzip mpv pfetch figlet gparted microsoft-edge blender ];
 
   
   
@@ -75,8 +76,8 @@
   # Flatpak
   #services.flatpak.enable = true;
 
-  # Docker
-  virtualisation.docker.enable = true;
+  # Podman
+  virtualisation.podman.enable = true;
 
   # Usbmuxd
   services.usbmuxd.enable = true;
@@ -86,7 +87,6 @@
 
   # Starship
   programs.starship.enable = true;
-};
 
 
   # SSID
