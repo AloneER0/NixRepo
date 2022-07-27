@@ -5,9 +5,12 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./packages.nix
+      ./services.nix
+      ./pipewire.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
+  # GRUB
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enable = true;
@@ -15,9 +18,8 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
 
-  # Network/Hostname
+  # Hostname
   networking.hostName = "nixbox"; # Define your hostname.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Poland";
@@ -33,7 +35,6 @@
   # Enable the X11/Plasma DE
   services.xserver.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.windowManager.bspwm.enable = true;
   services.xserver.displayManager.sddm.enable = true;
 
   # Configure keymap in X11
@@ -43,16 +44,6 @@
   #   "caps:escape" # map caps to escape.
   # };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
-  # Touchpad support
-  services.xserver.libinput.enable = true;
-
   # User
   users.users.alone = {
     isNormalUser = true;
@@ -60,32 +51,6 @@
     description = "AloneER0";
     extraGroups = [ "wheel" "networkmanager" ];
   };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [ libsForQt5.yakuake tdesktop slack libsForQt5.kcolorpicker trojita wezterm aria2 nim libsForQt5.elisa libsForQt5.kate tmate wget firefox rustup go git python310 vte gcc btop ifuse bat exa kitty cmake gnumake neovim fzf yt-dlp tmux neofetch onlyoffice-bin emacs vscode gimp element-desktop spotify obsidian obs-studio discord gzip mpv pfetch figlet gparted microsoft-edge blender ];
-
-
-  # Options
-
-  # Steam/Gamemode
-  programs.steam.enable = true;
-  programs.gamemode.enable = true;
-
-  # Flatpak
-  #services.flatpak.enable = true;
-
-  # Podman
-  virtualisation.podman.enable = true;
-
-  # Usbmuxd
-  services.usbmuxd.enable = true;
-
-  # Java
-  programs.java.enable = true;
-
-  # Starship
-  programs.starship.enable = true;
 
 
   # SSID
@@ -95,10 +60,6 @@
     enableSSHSupport = true;
   };
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
