@@ -55,18 +55,17 @@
 
   # User
   users.users.alone = {
-  isNormalUser = true;
-  home = "/home/alone";
-  description = "AloneER0";
-  extraGroups = [ "wheel" "networkmanager" ];
-};
-  
+    isNormalUser = true;
+    home = "/home/alone";
+    description = "AloneER0";
+    extraGroups = [ "wheel" "networkmanager" ];
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [ aria2 nim libsForQt5.elisa libsForQt5.kate tmate wget firefox rustup go git python310 vte gcc btop ifuse bat exa kitty cmake gnumake neovim fzf yt-dlp tmux neofetch onlyoffice-bin emacs vscode gimp element-desktop spotify obsidian obs-studio discord gzip mpv pfetch figlet gparted microsoft-edge blender ];
+  environment.systemPackages = with pkgs; [ libsForQt5.yakuake tdesktop slack libsForQt5.kcolorpicker trojita wezterm aria2 nim libsForQt5.elisa libsForQt5.kate tmate wget firefox rustup go git python310 vte gcc btop ifuse bat exa kitty cmake gnumake neovim fzf yt-dlp tmux neofetch onlyoffice-bin emacs vscode gimp element-desktop spotify obsidian obs-studio discord gzip mpv pfetch figlet gparted microsoft-edge blender ];
 
-  
-  
+
   # Options
 
   # Steam/Gamemode
@@ -92,9 +91,9 @@
   # SSID
   # programs.mtr.enable = true;
   programs.gnupg.agent = {
-  enable = true;
-  enableSSHSupport = true;
-};
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   # List services that you want to enable:
 
